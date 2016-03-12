@@ -54,10 +54,6 @@ public class GetTFIDF {
 
 				alltermsFromDocs.add(terms);
 
-				// int in = indexReader.document(i).getField("path").toString()
-				// .lastIndexOf("/");
-				// int ou = indexReader.document(i).getField("path").toString()
-				// .lastIndexOf(">");
 				@SuppressWarnings("deprecation")
 				String[] docname = indexReader.document(i).getField("path")
 						.stringValue().split("articles");
@@ -87,12 +83,10 @@ public class GetTFIDF {
 
 			itermFrequency.put(entry.getKey(),
 					Math.log10(totalDocs / entry.getValue().size()));
-			// System.out.println(entry.getKey() + " idf is : "
-			// + Math.log10(totalDocs / entry.getValue().size()));
+			
 		}
 
-		// JSONObject jsonObject = new JSONObject();
-
+		
 		// Get tf-idf
 		for (Map.Entry<String, Map<String, Integer>> entry : termFrequency
 				.entrySet()) {
@@ -133,11 +127,6 @@ public class GetTFIDF {
 
 		System.out.println("Found in");
 
-		// for (Map.Entry<String, Double> entry : objGetTFIDF.tfidt.entrySet())
-		// {
-		// System.out.println(entry.getKey() + " " + entry.getValue());
-		// }
-
 		objGetTFIDF.pageRank();
 
 	}
@@ -173,19 +162,12 @@ public class GetTFIDF {
 		outGoingLinks = objLinkAnalysis.outGoingLinks;
 		inComingLinks = objLinkAnalysis.inComingLinks;
 
-		// for (String s : inComingLinks.keySet()) {
-		// System.out.println(s + " -- " + inComingLinks.get(s));
-		// }
 
 		Map<String, Double> map = new HashMap<String, Double>();
 		Map<String, Double> finalMap = new HashMap<String, Double>();
 
 		Double pageRank = 0.0;
-		// set rank of all documents.
-		// for (String link : tfidt.keySet()) {
-		// map.put(link, (double) (1 / totalDocuments));
-		// }
-		//
+		
 
 		// Set default ranks
 		for (Map.Entry<String, ArrayList<String>> entry : outGoingLinks
@@ -194,26 +176,6 @@ public class GetTFIDF {
 		}
 
 		for (int i = 0; i < 10; i++) {
-			// for all out docmment.// incoming // incoming.
-			// rank = defaultrank/ incominglink ni number of outgoing links.
-			// (1-d)
-			// yesterday code.
-			// for (String link : tfidt.keySet()) {
-			//
-			// List<String> in = inComingLinks.get(link);
-			// Double pageRank = map.get(link);
-			// if (in != null && !in.isEmpty()) {
-			//
-			// for (String l : in) {
-			// pageRank += map.get(l) / outGoingLinks.get(l).size();
-			// }
-			// }
-			// finalMap.put(link, pageRank);
-			// }
-			//
-			// for (String k : finalMap.keySet()) {
-			// map.put(k, finalMap.get(k));
-			// }
 
 			for (Map.Entry<String, ArrayList<String>> entry : outGoingLinks
 					.entrySet()) {
@@ -243,7 +205,6 @@ public class GetTFIDF {
 		for (String output : finalMap.keySet()) {
 			obj.put(output, finalMap.get(output));
 		}
-		// jsonArray.put(obj);
 		document.put("linkAnalysis", obj.toString());
 		collection.insert(document);
 
