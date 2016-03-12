@@ -2,5 +2,13 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="H:/454/jsoup-1.8.3.jar"/>
+	<classpathentry kind="lib" path="H:/454/tika-app-1.11.jar"/>
+	<classpathentry kind="lib" path="H:/454/lucene-core-3.5.0-sources.jar"/>
+	<classpathentry kind="lib" path="H:/454/lucene-3.5.0.jar"/>
+	<classpathentry kind="lib" path="H:/454/mongo-java-driver-3.2.1.jar"/>
+	<classpathentry kind="lib" path="H:/454/porter-stemmer-1.4.jar"/>
+	<classpathentry kind="lib" path="H:/454/lucene-snowball-1.9.1.jar/lucene-snowball-1.9.1.jar"/>
+	<classpathentry kind="lib" path="H:/454/snowball-1.0.jar/snowball-1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

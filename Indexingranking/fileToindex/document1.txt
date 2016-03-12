@@ -1,0 +1,1 @@
+This New Year I am learning how to calculate cosine similarity using Lucene. It will be fun. an

@@ -1,0 +1,4 @@
+Dude, don't under estimate the power of cosine similarity. 
+I can tell you which types of books are there in your computer simply by running my scripts of cosine similarity. 
+
+
